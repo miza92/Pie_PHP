@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /config.json/
+Disallow: /Core/
+Disallow: /src/
+Disallow: /routes.php
