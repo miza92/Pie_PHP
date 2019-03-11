@@ -1,7 +1,8 @@
 <?php
 namespace Controller;
+use Core\Controller;
 
-class UserController  {
+class UserController extends Controller {
 	public function addAction() {
 		echo __CLASS__ . " [OK]"  . "Dans addAction userController" . PHP_EOL;
 	}
