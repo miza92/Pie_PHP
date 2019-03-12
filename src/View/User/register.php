@@ -11,7 +11,7 @@
 		<header>
 		</header>
 		<div class="container">
-			<form class="form" action="index.php" method="post">
+			<form class="form" action="" method="post">
 				<div class="row">
                     <label for="email">E-Mail *</label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="Renter votre mot de passe" required minlength="4" maxlength="8">    
