@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8"><!--Encodage latin de la page -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Site de rencontre"/>
-		<link rel="stylesheet" type="text/css" href="./css/styles.css">
-		<title>PiePHP</title>
-	</head>
-	<body>
-		<header>
-		</header>
-		<div class="container">
-            <P>Bienvenue !(index views)</p>
+<header class="header">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="navbar-brand">
+			<h3 class="text-secondary" class="d-flex justify-content-center">Pie PHP</h3>
 		</div>
-		<footer>
-			
-		</footer>
-	</body>
-</html>
+		<div class="navbar-brand">
+			<a class="btn btn-secondary" href="loginAction" role="button">Login</a>
+			<a class="btn btn-secondary" href="registerAction" role="button">Register</a>
+		</div>
+	</nav>
+</header>

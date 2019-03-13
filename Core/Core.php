@@ -61,7 +61,6 @@ class Core {
 			$var->$method();			
 		}
 		else{
-			//echo 'ereur';
 			include("./src/View/Error/404.php");
 		}
 	}

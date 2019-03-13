@@ -1,15 +1,17 @@
 <?php
-//faut revoir si je la laisse ou non
-class Connexion
+namespace Core;
+use PDO;
+
+class Database
 {
-    public function basePdo()
-    {
+    public $database;
+
+    public function __construct() {
+    
         try {
-            $database = new PDO('mysql:host=localhost;dbname=piephp', 'root', 'root');
-        } catch
-        (Exception $e) {
+            $this->database = new PDO('mysql:host=localhost;dbname=piephp', 'root', 'root');
+        } catch (Exception $e) {
             die('ERROR :' . $e->getMessage());
         }
-        return $database;
     }
 }

@@ -11,6 +11,7 @@ class Controller {
         extract($scope);
         //implode — Rassemble les éléments d'un tableau en une chaîne
         $f = implode(DIRECTORY_SEPARATOR, [dirname(__DIR__), 'src', 'View', str_replace('Controller', '', basename(get_class($this))), $view]) . '.php';
+        //var_dump($f);
         //var_dump(stripslashes($f));
         if (file_exists(stripslashes($f))) {
             //Enclenche la temporisation de sortie
@@ -24,8 +25,7 @@ class Controller {
         }
     }
     public function __destruct() {
-        //self::$_render;
+        //afficher la page html
         echo self::$_render;
-        //echo'coucou';
     } 
 }
