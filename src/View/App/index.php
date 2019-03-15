@@ -4,8 +4,8 @@
 			<h3 class="text-secondary" class="d-flex justify-content-center">Pie PHP</h3>
 		</div>
 		<div class="navbar-brand">
-			<a class="btn btn-secondary" href="loginAction" role="button">Login</a>
-			<a class="btn btn-secondary" href="registerAction" role="button">Register</a>
+			<a class="btn btn-secondary" href="login" role="button">Login</a>
+			<a class="btn btn-secondary" href="register" role="button">Register</a>
 		</div>
 	</nav>
 </header>

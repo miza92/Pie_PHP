@@ -7,7 +7,7 @@ use Model\UserModel;
 class UserController extends Controller {
 	public function addAction() {
 		echo __CLASS__ . " [OK]"  . "Dans addAction userController" . PHP_EOL;
-		// affiche la page index.php
+		// affiche la view
 		$this->render('index');	
 	}
 	public function indexAction() {
@@ -19,13 +19,26 @@ class UserController extends Controller {
 		$this->render('register');
 
 		$var = new UserModel();
-		$var->save(); 
+		$var->save();
+		//echo "<script>alert('Vous êtes bien inscrit !')</script>";
 	}
 	public function loginAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction loginAction" . PHP_EOL;
 		$this->render('login');
 
+		//session_start();
 		$var = new UserModel();
 		$var->log(); 
 	}
 }
+/*
+include 'log_in.php';
+include 'sign_out.php'; 
+session_start();
+$session = new log_in();
+$tab = $session->session();
+$_SESSION['id_user'] = $tab['id_user'];
+$_SESSION['username'] = $tab['username'];
+$_SESSION['display_name'] = $tab['display_name'];
+$_SESSION['email'] = $tab['email'];
+*/

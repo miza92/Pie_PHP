@@ -2,7 +2,7 @@
 	<h3>Pie PHP</h3>
 </header>
 <div class="container">
-	<form class="form" action="loginAction" method="post">
+	<form class="form" action="" method="post">
 		<div class="row">
 			<div class="col-md-3"></div>
 				<div class="col-md-6">

@@ -5,6 +5,11 @@ class Controller {
 
     protected static $_render;
 
+    public function __construct() {
+        $req = new Request();
+        $req->input($_REQUEST);
+
+    }
     //afficher la view passée en paramètre dans le layout index
     protected function render($view, $scope = []) {
         //Importe les variables dans la table des symboles
