@@ -8,6 +8,7 @@ class Controller {
     public function __construct() {
         $req = new Request();
         $req->input($_REQUEST);
+        $req->input($_GET);
 
     }
     //afficher la view passée en paramètre dans le layout index

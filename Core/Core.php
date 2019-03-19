@@ -45,7 +45,14 @@ class Core {
 		*/
 		//rotage static
 		$url = str_replace(BASE_URI, '', $_SERVER["REQUEST_URI"]);
-		//var_dump($url);
+		/*var_dump($url);
+		$var = explode('/', $url);
+		var_dump($var[0]);
+		var_dump($var[1]);
+		$var[0] = trim($var[0]);
+		$var[1] = trim($var[1]);
+		$url = implode('/', $var);
+		//$url = trim($url);*/
 		$tab = Router::get($url);
 		//var_dump($tab);
 		//var_dump($tab['controller']);
@@ -58,9 +65,11 @@ class Core {
 		//var_dump($classe);
 		if(class_exists($classe)) {	
 			$var = new $classe();
-			$var->$method();			
+			$var->$method();		
 		}
 		else{
+			//$url = "/app/not";
+			//$tab = Router::get($url);
 			include("./src/View/Error/404.php");
 		}
 	}

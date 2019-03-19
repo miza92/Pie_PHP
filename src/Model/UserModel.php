@@ -38,13 +38,12 @@ class UserModel {
 			}
 		}
 	}
-	public function session() {
+	/*public function session() {
 		$obj = new Database();
 		$sql = $obj->database->prepare('SELECT * FROM users WHERE email=:email');
 		$_email = $_SESSION['email'];
 		$sql->bindValue(':email', $_email, PDO::PARAM_STR);
 		$sql->execute();
 		$session = $sql->fetch();
-		//return $session;
-	}
+	}*/
 }
