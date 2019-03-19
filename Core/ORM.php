@@ -48,25 +48,37 @@ class ORM extends Database {
     }
     public function delete ($table, $id) {
         // retourne un booléen
-        $data = new co();
-        $database = $data->test();
-
-        $sql = $database->prepare('UPDATE users SET e_mail=:null_del WHERE username=:username');
-
-
-        $null = $_POST['delete'];
-        $email = $_SESSION['email'];
-
-        $sql->bindValue(':null_del', $null, PDO::PARAM_NULL);
-        $sql->bindValue(':email', $email, PDO::PARAM_STR);
-
+        $obj = new Database();
+        $sql = $obj->database->prepare("DELETE FROM $table WHERE id = $id");
+        var_dump($sql);
         $sql->execute();
+        var_dump($sql->execute());
+        return($sql->execute());
     }
     public function find ($table, $params = array(
         'WHERE' => '1',
         'ORDER BY' => 'id ASC',
-        'LIMIT' => ''
-        )) { // retourne un tableau d'enregistrements
+        //'LIMIT' => ''
+        )) { 
+        // retourne un tableau d'enregistrements
+        $tab = [];
+        foreach($params as $key => $valeu) {
+            //echo $key. PHP_EOL;
+            //echo $value. PHP_EOL;
+            $combine = $key . " " .$valeu;
+            //print(array_push($tab, $combine));
+        }
+        $resulta = implode(" ", $tab);
+        //var_dump($resulta);
+        $obj = new Database();
+        $sql = $obj->database->prepare("SELECT * FROM $table $resulta");
+        //SELECT * FROM users WHERE id = 4 ORDER BY id ASC LIMIT 5
+        //var_dump($sql);
+        $sql->execute();
+        //var_dump($sql->execute());
+        $result = $sql->fetchAll();
+        //var_dump($result);
+        return $result;
     }
 }
 

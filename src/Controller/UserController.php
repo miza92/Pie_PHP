@@ -24,15 +24,17 @@ class UserController extends Controller {
 		/*$orm = new ORM();
 		$orm->read('users', "7");*/
 
-		$orm = new ORM();
+		/*$orm = new ORM();
 		$orm->update('users', 155, array(
 		"email" => "upd",
 		"password" => "arr",
-		));
+		));*/
 		
-		//$orm->delete('articles', 1);
+		/*$orm = new ORM();
+		$orm->delete('users', 155);*/
 
-
+		$orm = new ORM();
+		$orm->find('users', array('WHERE'=> '1', 'ORDER BY' => 'id ASC', 'LIMIT' => '5'));
 	}
 	public function registerAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction registerAction" . PHP_EOL;
