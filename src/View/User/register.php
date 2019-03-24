@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <label for="password">Mot de passe *</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Renter votre mot de passe" required minlength="4" maxlength="8">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Renter votre mot de passe" required minlength="4" maxlength="30">
             </div>
 			<div class="row">
 				<button type="submit" class="btn btn-info"><i class="fa fa-user-plus"></i> Inscription</button>

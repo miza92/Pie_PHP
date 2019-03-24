@@ -4,12 +4,10 @@ namespace Core;
 class Controller {
 
     protected static $_render;
+    protected $request;
 
     public function __construct() {
-        $req = new Request();
-        $req->input($_REQUEST);
-        $req->input($_GET);
-
+        $this->request = new Request();
     }
     //afficher la view passée en paramètre dans le layout index
     protected function render($view, $scope = []) {

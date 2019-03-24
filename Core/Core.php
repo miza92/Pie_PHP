@@ -65,11 +65,10 @@ class Core {
 		//var_dump($classe);
 		if(class_exists($classe)) {	
 			$var = new $classe();
-			$var->$method();		
+			$var->$method();
+			//Je ne rajoute pas une autre condition j'ai mis tous dans les routes		
 		}
 		else{
-			//$url = "/app/not";
-			//$tab = Router::get($url);
 			include("./src/View/Error/404.php");
 		}
 	}

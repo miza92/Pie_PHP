@@ -33,34 +33,32 @@ class UserController extends Controller {
 		/*$orm = new ORM();
 		$orm->delete('users', 155);*/
 
-		$orm = new ORM();
-		$orm->find('users', array('WHERE'=> '1', 'ORDER BY' => 'id ASC', 'LIMIT' => '5'));
+		/*$orm = new ORM();
+		$orm->find('users', array('WHERE'=> '1', 'ORDER BY' => 'id ASC', 'LIMIT' => '5'));*/
 	}
 	public function registerAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction registerAction" . PHP_EOL;
 		$this->render('register');
-
-		$var = new UserModel();
-		$var->save();
-		//echo "<script>alert('Vous êtes bien inscrit !')</script>";
+		//Les entités
+		$params = $this->request->getQueryParams();
+		$user = new UserModel($params);
+		if (!$user->_email) {
+		$user->save();
+		self::$_render = "Votre compte a été créé." . PHP_EOL;
+		}
 	}
 	public function loginAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction loginAction" . PHP_EOL;
 		$this->render('login');
-
 		//session_start();
-		$var = new UserModel();
-		$var->log(); 
+		//Les entités
+		$params = $this->request->getQueryParams();
+		$user = new UserModel($params);
+		if (!$user->id) {
+		$user->log();
+		self::$_render = "Votre êtes bien connecté." . PHP_EOL;
+		}
+		/*$var = new UserModel();
+		$var->log();*/ 
 	}
 }
-/*
-include 'log_in.php';
-include 'sign_out.php'; 
-session_start();
-$session = new log_in();
-$tab = $session->session();
-$_SESSION['id_user'] = $tab['id_user'];
-$_SESSION['username'] = $tab['username'];
-$_SESSION['display_name'] = $tab['display_name'];
-$_SESSION['email'] = $tab['email'];
-*/
