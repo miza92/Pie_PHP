@@ -39,9 +39,9 @@ class ORM extends Database {
         // retourne un booléen
         $obj = new Database();
         $sql = $obj->database->prepare("DELETE FROM $table WHERE id = $id");
-        var_dump($sql);
+        //var_dump($sql);
         $sql->execute();
-        var_dump($sql->execute());
+        //var_dump($sql->execute());
         return($sql->execute());
     }
     public function find ($table, $params = array(

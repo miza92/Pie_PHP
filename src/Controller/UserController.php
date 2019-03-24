@@ -39,26 +39,26 @@ class UserController extends Controller {
 	public function registerAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction registerAction" . PHP_EOL;
 		$this->render('register');
+		//instancier le UserModel sans Entity
+		$var = new UserModel();
+		$var->save();
 		//Les entités
-		$params = $this->request->getQueryParams();
+		/*$params = $this->request->getQueryParams();
 		$user = new UserModel($params);
-		if (!$user->_email) {
+		//if (!$user->getEmail()) {
+		if (!$user->id) {
 		$user->save();
 		self::$_render = "Votre compte a été créé." . PHP_EOL;
-		}
+		}*/
 	}
 	public function loginAction() {
 		echo __CLASS__ . " [OK]"  . "Dans indexAction loginAction" . PHP_EOL;
 		$this->render('login');
-		//session_start();
-		//Les entités
-		$params = $this->request->getQueryParams();
-		$user = new UserModel($params);
-		if (!$user->id) {
-		$user->log();
-		self::$_render = "Votre êtes bien connecté." . PHP_EOL;
-		}
-		/*$var = new UserModel();
-		$var->log();*/ 
+		//instancier le UserModel sans Entity
+		$var = new UserModel();
+		$var->log();
+	}
+	public function show($id) {
+		echo "ID de l’utilisateur à afficher : $id" . PHP_EOL;
 	}
 }
