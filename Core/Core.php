@@ -3,6 +3,8 @@ namespace Core;
 
 use Controller\UserController;
 use Controller\AppController;
+use Controller\FilmController;
+use Controller\GenreController;
 use Core\Router;
 
 require_once ("routes.php");
@@ -45,17 +47,7 @@ class Core {
 		*/
 		//rotage static
 		$url = str_replace(BASE_URI, '', $_SERVER["REQUEST_URI"]);
-		/*var_dump($url);
-		$var = explode('/', $url);
-		var_dump($var[0]);
-		var_dump($var[1]);
-		$var[0] = trim($var[0]);
-		$var[1] = trim($var[1]);
-		$url = implode('/', $var);
-		//$url = trim($url);*/
 		$tab = Router::get($url);
-		//var_dump($tab);
-		//var_dump($tab['controller']);
 		$tab['controller'] = ucfirst(strtolower($tab['controller']));
 		$classname = $tab['controller'] . "Controller";
 		//var_dump($classname);
@@ -66,7 +58,6 @@ class Core {
 		if(class_exists($classe)) {	
 			$var = new $classe();
 			$var->$method();
-			//Je ne rajoute pas une autre condition j'ai mis tous dans les routes		
 		}
 		else{
 			include("./src/View/Error/404.php");
