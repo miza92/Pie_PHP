@@ -2,9 +2,7 @@
 namespace Core;
 use PDO;
 
-
-class Database
-{
+class Database {
     public $database;
     private $dbname;
     

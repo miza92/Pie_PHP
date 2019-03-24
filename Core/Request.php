@@ -4,12 +4,12 @@ namespace Core;
 class Request {
 
     public $request = [];
+    
     public function __construct () {
         //var_dump($input);
         foreach($_REQUEST as $key => $value) {
             $value = str_replace('  ', ' ', $value);
-            $this->request[$key] = trim(stripslashes(htmlentities($value, ENT_QUOTES)));
-            //print($this->request[$key]);   
+            $this->request[$key] = trim(stripslashes(htmlentities($value, ENT_QUOTES)));  
         }
     }
     public function getQueryParams() {

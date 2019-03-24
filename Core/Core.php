@@ -9,8 +9,6 @@ use Core\Router;
 
 require_once ("routes.php");
 
-//use Model\UserModel;
-
 class Core {
 	public function run() {
 		echo __CLASS__ . " [OK]" . PHP_EOL;
