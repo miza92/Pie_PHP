@@ -52,7 +52,7 @@ class Core {
 		$method = $tab['action'] . "Action";
 		//var_dump($method);
 		$classe = "Controller\\" . $classname;
-		//var_dump($classe);
+		// var_dump($classname);
 		if(class_exists($classe)) {	
 			$var = new $classe();
 			$var->$method();
